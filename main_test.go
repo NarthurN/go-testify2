@@ -18,7 +18,7 @@ func TestMainHandlerWhenCountMoreThanTotal(t *testing.T) {
     handler := http.HandlerFunc(mainHandle)
     handler.ServeHTTP(responseRecorder, req)
 
-    // необходимые проверки
+    // все необходимые проверки
 	assert.Equal(t, responseRecorder.Code, 200)
 
 	body := responseRecorder.Body.String()
@@ -37,7 +37,7 @@ func TestMainHandlerWhenOK(t *testing.T) {
     handler := http.HandlerFunc(mainHandle)
     handler.ServeHTTP(responseRecorder, req)
 
-    // необходимые проверки
+    // все необходимые проверки
 	assert.Equal(t, responseRecorder.Code, 200)
 }
 
@@ -48,7 +48,7 @@ func TestMainHandlerWhenUnsupportedCity(t *testing.T) {
     handler := http.HandlerFunc(mainHandle)
     handler.ServeHTTP(responseRecorder, req)
 
-    // необходимые проверки
+    // все необходимые проверки
 	assert.Equal(t, responseRecorder.Code, 400)
 
 	body := responseRecorder.Body.String()
